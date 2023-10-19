@@ -1,12 +1,10 @@
 #!/usr/bin/env node
 
-const { program } = require('commander'); 
+const { Command } = require('commander'); 
+const program = new Command();
 
 program
     .version('0.0.1')
-    .optiom('-c, --code', 'Setup this code')
-    .parse(process.argv)
 
-const opts = program.opts();
 
-if (opts.code) console.log('You have chosen to start coding!')
+program.parse();
